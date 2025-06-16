@@ -1,1 +1,113 @@
 
+def main():
+    print("Bem-vindo ao Sistema Agrinho!")
+    print("Este programa tem como objetivo promover a conscientização sobre a importância da agricultura e do meio ambiente.")
+    
+    while True:
+        print("\nMenu Principal:")
+        print("1. Calculadora de Pegada Ecológica")
+        print("2. Dicas de Agricultura Sustentável")
+        print("3. Jogo Educativo sobre Reciclagem")
+        print("4. Sobre o Projeto Agrinho")
+        print("5. Sair")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            calcular_pegada_ecologica()
+        elif opcao == "2":
+            mostrar_dicas_agricultura()
+        elif opcao == "3":
+            jogar_jogo_reciclagem()
+        elif opcao == "4":
+            sobre_projeto()
+        elif opcao == "5":
+            print("Obrigado por participar do Projeto Agrinho! Até mais!")
+            break
+        else:
+            print("Opção inválida. Por favor, escolha uma opção de 1 a 5.")
+
+def calcular_pegada_ecologica():
+    print("\nCalculadora de Pegada Ecológica")
+    print("Responda as perguntas abaixo para estimar seu impacto ambiental:")
+    
+    perguntas = [
+        "Quantas refeições com carne você consome por semana?",
+        "Quantos quilômetros você dirige/anda de carro por semana?",
+        "Quantas horas de eletricidade você usa por dia em sua casa?",
+        "Com que frequência você recicla? (1-nunca, 5-sempre)"
+    ]
+    
+    respostas = []
+    for pergunta in perguntas:
+        resposta = input(pergunta + " ")
+        respostas.append(float(resposta))
+    
+    # Cálculo simples da pegada ecológica
+    pegada = (respostas[0] * 0.5) + (respostas[1] * 0.2) + (respostas[2] * 0.3) + (5 - respostas[3])
+    
+    print(f"\nSua pontuação de pegada ecológica é: {pegada:.1f}")
+    if pegada < 10:
+        print("Parabéns! Você tem um estilo de vida sustentável!")
+    elif pegada < 20:
+        print("Você está no caminho certo, mas pode melhorar em algumas áreas.")
+    else:
+        print("Considere adotar práticas mais sustentáveis para reduzir seu impacto ambiental.")
+
+def mostrar_dicas_agricultura():
+    print("\nDicas de Agricultura Sustentável:")
+    dicas = [
+        "1. Pratique a rotação de culturas para preservar o solo.",
+        "2. Use compostagem para adubar naturalmente suas plantas.",
+        "3. Considere a agricultura orgânica, sem uso de agrotóxicos.",
+        "4. Implemente sistemas de irrigação eficientes para economizar água.",
+        "5. Preserve áreas de vegetação nativa em sua propriedade."
+    ]
+    
+    for dica in dicas:
+        print(dica)
+    
+    print("\nLembre-se: pequenas ações fazem uma grande diferença para o planeta!")
+
+def jogar_jogo_reciclagem():
+    print("\nJogo Educativo sobre Reciclagem")
+    print("Classifique cada item no lixo correto: Orgânico, Reciclável ou Rejeito.")
+    
+    itens = {
+        "Casca de banana": "Orgânico",
+        "Garrafa PET": "Reciclável",
+        "Pilha usada": "Rejeito",
+        "Jornal velho": "Reciclável",
+        "Restos de comida": "Orgânico",
+        "Lâmpada queimada": "Rejeito"
+    }
+    
+    pontuacao = 0
+    
+    for item, resposta_correta in itens.items():
+        resposta = input(f"Onde descartar {item}? ").capitalize()
+        if resposta == resposta_correta:
+            print("Correto!")
+            pontuacao += 1
+        else:
+            print(f"Incorreto. O correto é {resposta_correta}.")
+    
+    print(f"\nSua pontuação final: {pontuacao}/{len(itens)}")
+    if pontuacao == len(itens):
+        print("Excelente! Você é um expert em reciclagem!")
+    elif pontuacao >= len(itens)/2:
+        print("Bom trabalho! Continue aprendendo sobre reciclagem.")
+    else:
+        print("Estude mais sobre reciclagem para ajudar o meio ambiente!")
+
+def sobre_projeto():
+    print("\nSobre o Projeto Agrinho:")
+    print("O Agrinho é um programa educacional que promove:")
+    print("- Conscientização ambiental")
+    print("- Práticas agrícolas sustentáveis")
+    print("- Educação para a cidadania")
+    print("- Desenvolvimento de projetos escolares")
+    print("\nEste software é um exemplo de como a tecnologia pode ser usada para promover esses objetivos.")
+
+if __name__ == "__main__":
+    main()
