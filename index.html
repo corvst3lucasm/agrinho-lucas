@@ -1,113 +1,153 @@
-
-def main():
-    print("Welcome to the Agrinho System!")
-    print("This program aims to promote awareness about agriculture and environmental importance.")
-    
-    while True:
-        print("\nMain Menu:")
-        print("1. Ecological Footprint Calculator")
-        print("2. Sustainable Agriculture Tips")
-        print("3. Recycling Educational Game")
-        print("4. About Agrinho Project")
-        print("5. Exit")
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Agrinho</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
         
-        option = input("Choose an option: ")
+        header {
+            background-color: #2e8b57;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
         
-        if option == "1":
-            calculate_ecological_footprint()
-        elif option == "2":
-            show_agriculture_tips()
-        elif option == "3":
-            play_recycling_game()
-        elif option == "4":
-            about_project()
-        elif option == "5":
-            print("Thank you for participating in the Agrinho Project! See you!")
-            break
-        else:
-            print("Invalid option. Please choose a number between 1 and 5.")
-
-def calculate_ecological_footprint():
-    print("\nEcological Footprint Calculator")
-    print("Answer the questions below to estimate your environmental impact:")
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        
+        h2 {
+            color: #2e8b57;
+            border-bottom: 2px solid #2e8b57;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #3a3a3a;
+            margin-left: 15px;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .logo {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_agrinho.png" alt="Logo Agrinho" class="logo">
+        <h1>Projeto Agrinho</h1>
+        <p>Conectando o campo à cidade, cultivando o futuro</p>
+    </header>
     
-    questions = [
-        "How many meat meals do you consume per week?",
-        "How many kilometers do you drive/ride by car per week?",
-        "How many hours of electricity do you use daily at home?",
-        "How often do you recycle? (1-never, 5-always)"
-    ]
+    <div class="container">
+        <h2>Índice</h2>
+        
+        <div class="section">
+            <h3>1. Introdução</h3>
+            <ul>
+                <li>1.1 Objetivos do Projeto</li>
+                <li>1.2 Importância do Tema</li>
+                <li>1.3 Justificativa</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>2. Fundamentação Teórica</h3>
+            <ul>
+                <li>2.1 Conceitos-chave</li>
+                <li>2.2 Sustentabilidade Ambiental e Agrícola</li>
+                <li>2.3 Estudos Relacionados</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>3. Metodologia</h3>
+            <ul>
+                <li>3.1 Desenvolvimento do Projeto</li>
+                <li>3.2 Ferramentas e Tecnologias Utilizadas</li>
+                <li>3.3 Etapas de Implementação</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>4. Aplicação Prática</h3>
+            <ul>
+                <li>4.1 Descrição da Solução Desenvolvida</li>
+                <li>4.2 Funcionamento (Explicação do Código/Protótipo)</li>
+                <li>4.3 Benefícios Esperados</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>5. Resultados e Discussão</h3>
+            <ul>
+                <li>5.1 Resultados Obtidos</li>
+                <li>5.2 Desafios Enfrentados</li>
+                <li>5.3 Possíveis Melhorias</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>6. Conclusão</h3>
+            <ul>
+                <li>6.1 Considerações Finais</li>
+                <li>6.2 Perspectivas Futuras</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>7. Referências</h3>
+            <ul>
+                <li>Livros, Artigos e Sites Utilizados</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>8. Anexos (se aplicável)</h3>
+            <ul>
+                <li>Código Fonte</li>
+                <li>Imagens/Diagramas</li>
+                <li>Dados de Pesquisa</li>
+            </ul>
+        </div>
+    </div>
     
-    answers = []
-    for question in questions:
-        answer = input(question + " ")
-        answers.append(float(answer))
-    
-    # Simple ecological footprint calculation
-    footprint = (answers[0] * 0.5) + (answers[1] * 0.2) + (answers[2] * 0.3) + (5 - answers[3])
-    
-    print(f"\nYour ecological footprint score is: {footprint:.1f}")
-    if footprint < 10:
-        print("Congratulations! You have a sustainable lifestyle!")
-    elif footprint < 20:
-        print("You're on the right track, but can improve in some areas.")
-    else:
-        print("Consider adopting more sustainable practices to reduce your environmental impact.")
-
-def show_agriculture_tips():
-    print("\nSustainable Agriculture Tips:")
-    tips = [
-        "1. Practice crop rotation to preserve soil health.",
-        "2. Use composting to naturally fertilize your plants.",
-        "3. Consider organic farming without pesticides.",
-        "4. Implement efficient irrigation systems to save water.",
-        "5. Preserve areas of native vegetation on your property."
-    ]
-    
-    for tip in tips:
-        print(tip)
-    
-    print("\nRemember: small actions make a big difference for the planet!")
-
-def play_recycling_game():
-    print("\nRecycling Educational Game")
-    print("Classify each item in the correct bin: Organic, Recyclable, or Waste.")
-    
-    items = {
-        "Banana peel": "Organic",
-        "PET bottle": "Recyclable",
-        "Used battery": "Waste",
-        "Old newspaper": "Recyclable",
-        "Food scraps": "Organic",
-        "Burnt-out light bulb": "Waste"
-    }
-    
-    score = 0
-    
-    for item, correct_answer in items.items():
-        answer = input(f"Where to dispose {item}? ").capitalize()
-        if answer == correct_answer:
-            print("Correct!")
-            score += 1
-        else:
-            print(f"Incorrect. The right answer is {correct_answer}.")
-    
-    print(f"\nYour final score: {score}/{len(items)}")
-    if score == len(items):
-        print("Excellent! You're a recycling expert!")
-    elif score >= len(items)/2:
-        print("Good job! Keep learning about recycling.")
-    else:
-        print("Study more about recycling to help the environment!")
-
-def about_project():
-    print("\nAbout Agrinho Project:")
-    print("Agrinho is an educational program that promotes:")
-    print("- Environmental awareness")
-    print("- Sustainable agricultural practices")
-    print("- Citizenship education")
-    print("- Development of school projects")
-    print("\nThis software is an example of how technology can be used to promote these goals.")
-
-if __name__ == "__main__":
-    main()
+    <footer>
+        <p>Projeto desenvolvido para o Agrinho 2023 | Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
